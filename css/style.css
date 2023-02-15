@@ -486,9 +486,6 @@ video {
 .hidden {
   display: none;
 }
-.max-h-screen {
-  max-height: 100vh;
-}
 .max-h-full {
   max-height: 100%;
 }

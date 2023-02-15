@@ -23,8 +23,13 @@ const warning = () =>{
     warn.classList.remove('hidden');
 }
 
+const success = () =>{
+    document.getElementById('success').classList.remove('hidden');
+}
+
 const hideWarning = () =>{
     warn.classList.add('hidden');
+    document.getElementById('success').classList.add('hidden');
 }
 
 let requestCityData = (city) =>{
@@ -32,8 +37,16 @@ let requestCityData = (city) =>{
     .then(response => response.json())
 	.then(response => {
         console.log(response);
+        if(response.temp!=null) {
+            document.getElementById('success').innerText ="Success"
+        }else{
+            document.getElementById('success').innerText  ="API Unreachable";
+        };
         if(response.error != null){
             warning();
+        }
+        else{
+            success();
         }
         hideLoader();
     })
