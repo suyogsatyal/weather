@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="loader hidden fixed top-0 left-0 min-h-screen min-w-full bg-slate-500 opacity-80 z-50" id="loader"></div>
+    <div class="main flex flex-col min-h-screen min-w-full justify-center items-center bg-gradient-to-br from-yellow-200 to-sky-300">
+        <div class="flex flex-col justify-center items-center border border-gray-400 rounded-lg p-8 ">
+            <div class="md:text-6xl text-4xl py-2 lobster header">
+                Weather App
+            </div>
+            <div id="warning" class="hidden text-red-700 bg-red-300 py-3 px-5 border border-red-600 rounded-md">Enter a valid City</div>
+            <div class="form-control w-full">
+                <input type="value" required="" class="w-11/12" id="cityName" onkeydown = "if (event.keyCode == 13) document.getElementById('request').click()">
+                <label>
+                    <span style="transition-delay:0ms">C</span>
+                    <span style="transition-delay:50ms">i</span>
+                    <span style="transition-delay:100ms">t</span>
+                    <span style="transition-delay:150ms">y</span>
+                    <span style="transition-delay:200ms">&nbsp;</span>
+                    <span style="transition-delay:200ms">N</span>
+                    <span style="transition-delay:250ms">a</span>
+                    <span style="transition-delay:300ms">m</span>
+                    <span style="transition-delay:350ms">e</span>
+                </label>
+            </div>
+            <div class="py-2">
+                <div class="cursor-pointer text-blue-700 btn" id="request">Generate</div>
+            </div>
+            <div>
+                Made Using <a href="https://api-ninjas.com/api/weather" class="text-blue-400 duration-200 hover:text-blue-500">API Ninjas</a> 
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/loader.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
