@@ -7,22 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=M+PLUS+1p:wght@700&family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Weather By Suyog</title>
 </head>
 
-<body class="max-h-full overflow-hidden">
-    <div class="loader hidden fixed top-0 left-0 min-h-screen min-w-full bg-slate-500 opacity-80 z-50" id="loader"></div>
-    <div class="main flex flex-col min-h-screen min-w-full justify-center items-center bg-gradient-to-br from-yellow-200 to-sky-300">
-        <div class="flex flex-col justify-center items-center border border-gray-400 rounded-lg p-8 ">
+<body class="max-h-full overflow-hidden mplus">
+    <div class="loader hidden fixed top-0 left-0 min-h-screen min-w-full bg-slate-500 opacity-80 z-50" id="loader">
+    </div>
+    <div
+        class="main flex flex-col min-h-screen min-w-full justify-center items-center bg-gradient-to-br from-yellow-200 to-sky-300">
+        <div class="main-content flex flex-col justify-center items-center border border-gray-400 rounded-lg p-8 "
+            id="mainContent">
             <div class="md:text-6xl text-4xl py-2 lobster header">
                 Weather App
             </div>
-            <div id="warning" class="hidden text-red-700 bg-red-300 py-3 px-5 border border-red-600 rounded-md">Enter a valid City</div>
+            <div id="warning" class="hidden text-red-700 bg-red-300 py-3 px-5 border border-red-600 rounded-md">Enter a
+                valid City</div>
             <div id="success" class="hidden text-red-700 bg-red-300 py-3 px-5 border border-red-600 rounded-md"></div>
             <div class="form-control w-full">
-                <input type="text" required="" class="w-11/12" id="cityName" onkeydown = "if (event.keyCode == 13) document.getElementById('request').click()">
+                <input type="text" required="" class="w-11/12" id="cityName"
+                    onkeydown="if (event.keyCode == 13) document.getElementById('request').click()">
                 <label>
                     <span style="transition-delay:0ms">C</span>
                     <span style="transition-delay:50ms">i</span>
@@ -39,9 +44,39 @@
                 <div class="cursor-pointer text-blue-700 btn" id="request">Generate</div>
             </div>
             <div>
-                Made Using <a href="https://api-ninjas.com/api/weather" class="text-blue-400 duration-200 hover:text-blue-500">API Ninjas</a> 
+                Made Using <a href="https://api-ninjas.com/api/weather"
+                    class="text-blue-400 duration-200 hover:text-blue-500">API Ninjas</a>
             </div>
         </div>
+        <div class="data hidden flex-col relative justify-center items-center border border-gray-400 rounded-lg overflow-hidden"
+            id="data">
+            <div class="return absolute -top-1 -left-1 cursor-pointer p-1 text-sm md:text-base bg-blue-300 text-blue-700 rounded-br-lg border border-blue-700 hover:bg-blue-700 hover:text-gray-100 duration-150 "
+                id="return">Return</div>
+            <div class="flex flex-col justify-center items-center p-5">
+                <div class="md:text-6xl text-4xl py-2 lobster header" id="cityData">
+                    Kathmandu
+                </div>
+                <div class="md:text-7xl md:text-[72px]  text-4xl  py-2 oswald" id="temp">
+                    12<sup>o</sup>C
+                </div>
+                <span>Current Temperature</span>
+
+                <hr class="border border-stone-700 w-full my-3">
+
+                <div class="flex md:flex-row flex-col w-full justify-around">
+                    <div class="text-center items-center" >
+                        Feels Like <br>
+                        <span class="oswald" id="feel">12<sup>o</sup>C</span>
+                    </div>
+                    <div class="text-center items-center">
+                        Humidity <br>
+                        <span class="oswald" id="humid">55%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </div>
 
     <script src="./js/loader.js"></script>
